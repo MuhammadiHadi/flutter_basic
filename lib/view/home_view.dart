@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/res/color/color.dart';
+import 'package:flutter_basic/res/component/checkbox.dart';
+import 'package:flutter_basic/res/component/gird_view.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -36,36 +38,10 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         controller: _controller,
         children: [
           Gridpage(),
-          Text("Hello "),
+          checkbox(),
           Text("Hello  mera world"),
         ],
       ),
     );
-  }
-}
-
-class Gridpage extends StatelessWidget {
-  const Gridpage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-        itemCount: 50,
-        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 3,
-        ),
-        itemBuilder: (context, index) {
-          return Container(
-            height: 30,
-            width: 40,
-            margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            color: AppColors.black,
-            child: Center(
-                child: Text(
-              index.toString(),
-              style: TextStyle(color: AppColors.white),
-            )),
-          );
-        });
   }
 }
