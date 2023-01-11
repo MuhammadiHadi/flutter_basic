@@ -16,7 +16,15 @@ class AppButton extends StatelessWidget {
         width: double.infinity,
         margin: EdgeInsets.symmetric(horizontal: 30),
         decoration: BoxDecoration(
-            color: AppColors.black, borderRadius: BorderRadius.circular(20)),
+
+            //boxShadow
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey,
+                blurRadius: 4,
+                offset: Offset(4, 4), // Shadow position
+              ),
+            ], color: AppColors.black, borderRadius: BorderRadius.circular(20)),
         child: Center(
             child: Text(
           title.toString(),

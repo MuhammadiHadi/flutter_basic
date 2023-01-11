@@ -1,5 +1,7 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_basic/res/color/color.dart';
+import 'package:flutter_basic/res/component/carousel_slider.dart';
 import 'package:flutter_basic/res/component/checkbox.dart';
 import 'package:flutter_basic/res/component/gird_view.dart';
 
@@ -12,6 +14,14 @@ class HomeView extends StatefulWidget {
 
 class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
   late TabController _controller = TabController(length: 3, vsync: this);
+
+  List<String> imageList = [
+    'https://cdn.pixabay.com/photo/2017/10/28/07/47/woman-2896389_960_720.jpg',
+    'https://cdn.pixabay.com/photo/2022/10/07/07/13/alps-7504344__340.jpg',
+    'https://cdn.pixabay.com/photo/2018/04/07/22/18/nature-3299783__340.jpg',
+    'https://cdn.pixabay.com/photo/2015/11/21/15/49/tree-1055091__340.jpg',
+    'https://cdn.pixabay.com/photo/2017/10/22/13/24/malham-2877857__340.jpg'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +49,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
         children: [
           Gridpage(),
           checkbox(),
-          Text("Hello  mera world"),
+          CarouselSlideName(),
         ],
       ),
     );
