@@ -4,6 +4,7 @@ import 'package:flutter_basic/res/color/color.dart';
 import 'package:flutter_basic/res/component/carousel_slider.dart';
 import 'package:flutter_basic/res/component/checkbox.dart';
 import 'package:flutter_basic/res/component/gird_view.dart';
+import 'package:flutter_basic/res/component/local.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class HomeView extends StatefulWidget {
 }
 
 class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
-  late TabController _controller = TabController(length: 3, vsync: this);
+  late TabController _controller = TabController(length: 4, vsync: this);
 
   List<String> imageList = [
     'https://cdn.pixabay.com/photo/2017/10/28/07/47/woman-2896389_960_720.jpg',
@@ -38,8 +39,12 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
               icon: Icon(Icons.home),
             ),
             Tab(
-              text: "Home",
-              icon: Icon(Icons.home),
+              text: "Add",
+              icon: Icon(Icons.chair_outlined),
+            ),
+            Tab(
+              text: "Chair",
+              icon: Icon(Icons.chair_outlined),
             ),
           ],
         ),
@@ -50,6 +55,7 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           Gridpage(),
           checkbox(),
           CarouselSlideName(),
+          Local(),
         ],
       ),
     );
