@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basic/res/component/language.dart';
 import 'package:flutter_locales/flutter_locales.dart';
 
 class Local extends StatefulWidget {
@@ -8,16 +7,41 @@ class Local extends StatefulWidget {
 }
 
 class _LocalState extends State<Local> {
+  bool visible = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Center(
-          child: LocaleText(
-            "welcome",
-            style: TextStyle(fontSize: 30),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Container(
+            child: Center(
+              child: LocaleText(
+                "welcome",
+                style: TextStyle(fontSize: 30),
+              ),
+            ),
           ),
-        ),
+          SizedBox(
+            height: 30,
+          ),
+          GestureDetector(
+              onTap: () {
+                setState(() {
+                  visible = !visible;
+                });
+              },
+              child: Icon(Icons.abc_sharp)),
+          Visibility(
+            visible: visible,
+            child: Container(
+              height: 300,
+              width: double.infinity,
+              color: Colors.green,
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green[700],
