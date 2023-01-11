@@ -1,5 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/res/color/color.dart';
+import 'package:flutter_basic/res/component/button.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class checkbox extends StatefulWidget {
   const checkbox({Key? key}) : super(key: key);
@@ -13,12 +16,27 @@ class _checkboxState extends State<checkbox> {
   bool _valueone = false;
   bool _radio = true;
   int? _radio2;
+  double slider = 0;
+  bool swich = false;
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        Align(
+          alignment: Alignment.center,
+          child: Switch(
+              activeColor: Colors.black,
+              activeTrackColor: Colors.green,
+              inactiveTrackColor: Colors.red,
+              value: swich,
+              onChanged: (vla) {
+                setState(() {
+                  swich = vla;
+                });
+              }),
+        ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Text("Selected development tool"),
@@ -65,6 +83,35 @@ class _checkboxState extends State<checkbox> {
                 _radio2 = khan;
               });
             }),
+        Slider(
+            max: 500,
+            activeColor: AppColors.black,
+            inactiveColor: AppColors.green,
+            value: slider,
+            onChanged: (val) {
+              setState(() {
+                slider = val;
+              });
+            }),
+        CircularProgressIndicator(
+          value: slider,
+          strokeWidth: slider,
+        ),
+        Align(
+            alignment: Alignment.center,
+            child: Text(
+              "${slider.toStringAsFixed(1)}",
+              style: TextStyle(fontSize: 25),
+            )),
+        SizedBox(
+          height: 30,
+        ),
+        AppButton(
+          title: "Show Toast",
+          onTap: () {
+            Fluttertoast.showToast(msg: "Hello Meer Hadi");
+          },
+        )
       ],
     );
   }
