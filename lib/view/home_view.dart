@@ -49,6 +49,32 @@ class _HomeViewState extends State<HomeView> with TickerProviderStateMixin {
           ],
         ),
       ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            DrawerHeader(
+                child: Container(
+              height: 100,
+              width: double.infinity,
+              color: AppColors.green,
+            )),
+            ListTile(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              leading: Icon(Icons.account_box),
+              title: Text("Phone Number"),
+            ),
+            ListTile(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              leading: Icon(Icons.home),
+              title: Text("Homer"),
+            ),
+          ],
+        ),
+      ),
       body: TabBarView(
         controller: _controller,
         children: [
