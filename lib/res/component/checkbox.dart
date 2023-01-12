@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_basic/funcation/fun.dart';
 import 'package:flutter_basic/res/color/color.dart';
 import 'package:flutter_basic/res/component/button.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -109,7 +110,7 @@ class _checkboxState extends State<checkbox> {
         AppButton(
           title: "Show Toast",
           onTap: () {
-            Fluttertoast.showToast(msg: "Hello Meer Hadi");
+            Fun().ShowToast(context, "Hello Meer Hadi How Are you ");
           },
         )
       ],
