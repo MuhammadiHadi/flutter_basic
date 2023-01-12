@@ -52,7 +52,31 @@ class _CarouselSlideNameState extends State<CarouselSlideName> {
               ),
               onPressed: () {
                 Fun().Snakbarshow(context, "Upload again", "Try");
-              })
+              }),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              shadowColor: Colors.grey,
+              child: ListTile(
+                leading: Image.asset("assets/images/facebook.png"),
+                title: Text("Facebook"),
+                subtitle: Text("1M download"),
+                trailing: Container(
+                  height: 30,
+                  width: 60,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.green),
+                  child: Center(
+                    child: Text(
+                      "Get",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          )
         ],
       ),
     );
